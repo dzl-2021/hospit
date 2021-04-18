@@ -1,0 +1,33 @@
+<div id="header">
+		<el-row>
+		<el-menu :default-active="activeIndex" 
+		 class="el-menu-demo" mode="horizontal"
+		 @select="handleSelect"  
+		 text-color="#fff"
+  		 active-text-color="#ffd04b">
+				<el-col :span="2" ><img src="/static/images/log.png" alt="" height="30px"></el-col>
+				<el-col :span="1"></el-col>
+				<el-col :span="1"><el-menu-item index="1"><a href="" target="_self">首页</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="2"><a href="https://www.ele.me" >文章分类</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="3"><a href="https://www.ele.me" target="_blank">标签</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="4"><a href="https://www.ele.me" target="_blank">文章归档</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="5"><a href="/article/showArticle" target="_self">日志</a></el-menu-item></el-col>
+				<el-col :span="2"></el-col>
+				<el-col :span="4">
+					<el-menu-item index="1">
+						<a href="https://www.ele.me" target="_blank">
+							<i class="el-icon-edit"></i>写日志
+						</a>
+					</el-menu-item>
+				</el-col>
+				<el-col :span="1" id="el_col_dl">
+					<el-menu-item index="6">注册</el-menu-item>
+				</el-col>
+				<el-col :span="1" id="el_col_dl">
+					<el-menu-item index="7">登录</el-menu-item>
+				</el-col>
+				<el-col :span="1"></el-col>
+		   
+		</el-menu>
+	<el-row>
+</div>

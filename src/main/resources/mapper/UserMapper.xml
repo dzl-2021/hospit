@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jskj.springboot.mapper.UserMapper">
+ 	<select id="findUser" resultType="com.jskj.springboot.pojo.SysUser">
+		select * from sys_user
+		
+  	</select>
+  	
+  	<select id="findUserByName" resultType="com.jskj.springboot.pojo.SysUser">
+			select * from sys_user
+		<where>
+			<if test="username != null   and username != ''">
+             and username  =  #{username}
+         	</if>
+		</where>
+  	</select>
+  	
+ 	<insert id="insertUser" parameterType="com.jskj.springboot.pojo.SysUser">
+ 		insert into sys_user (
+                         id,
+                         username,
+                         password,
+                         createdate,
+                         active,
+                         email,
+                         user_key,
+                         phone
+ 		) values (
+ 			#{user.id},
+ 			#{user.username},
+ 			#{user.password},
+ 			#{user.createdate},
+ 			#{user.active},
+ 			#{user.email},
+ 			#{user.userKey},
+ 			#{user.phone}
+ 		)
+ 		
+ 	</insert>
+ 
+</mapper>

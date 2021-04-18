@@ -1,0 +1,22 @@
+#header {
+    background-color: #FFFFFF;
+    color: #90B0D7;
+    text-align:left;
+    padding:15px;
+    margin-left: 15%
+}
+#section {
+    width:60%;
+    height:100%;
+    padding:10px; 
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 15%
+}
+#footer {
+    background-color:#FFFFFF;
+    color: #CFD0D3;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+} 

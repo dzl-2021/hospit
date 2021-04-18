@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jskj.springboot.mapper.ArticleMapper">
+ 	<select id="findByUserId" resultType="com.jskj.springboot.pojo.MyArticle">
+		select * from my_article t where t.author_id = #{id}
+  	</select>
+  	<select id="getArticleBodyByAuthor" resultType="com.jskj.springboot.pojo.MyArticleBody">
+		select * from my_article_body t where t.article_id = #{articleId}
+  	</select>
+  	
+  	<select id="findUserByName" resultType="com.jskj.springboot.pojo.SysUser">
+			select * from sys_user
+		<where>
+			<if test="username != null   and username != ''">
+             and username  =  #{username}
+         	</if>
+		</where>
+  	</select>
+  	
+ 	<insert id="save" parameterType="com.jskj.springboot.pojo.MyArticle"  keyProperty="info.id" useGeneratedKeys="true">
+ 		insert into my_article (
+                         title,
+                         author_id,
+                         create_time
+ 		) values (
+ 			#{info.title},
+ 			#{info.authorId},
+ 			#{info.createTime}
+ 		)
+ 		
+ 	</insert>
+ 	
+ 		<insert id="saveBody" parameterType="com.jskj.springboot.pojo.MyArticleBody" >
+ 		insert into my_article_body (
+                         body,
+                         article_id,
+                         create_time
+ 		) values (
+ 			#{infoBody.body},
+ 			#{infoBody.articleId},
+ 			#{infoBody.creatTime}
+ 		)
+ 		
+ 	</insert>
+ 
+</mapper>

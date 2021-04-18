@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jskj.springboot.mapper.SupplierMapper">
+ 	
+  	
+  	<select id="findSupplierByName" resultType="com.jskj.springboot.pojo.Supplier">
+			select * from supplier t 
+		<where>
+			<if test="gysmc != null   and gysmc != ''">
+             and t.gysmc = #{gysmc}
+         	</if>
+         	and t.qyzt='1'
+		</where>
+  	</select>
+  	
+  	<select id="findSupplierByid" resultType="com.jskj.springboot.pojo.Supplier">
+			select * from supplier t 
+		<where>
+			<if test="gysid != null   and gysid != 0">
+             and t.id  =  #{gysid}
+         	</if>
+         	and t.qyzt='1'
+		</where>
+  	</select>
+  	
+ 	<insert id="saveSupplier" parameterType="com.jskj.springboot.pojo.Supplier">
+ 		insert into supplier (
+                        gysmc,
+						gysjc,
+						tyxydm,
+						jyfw,
+						fddbr,
+						sfzhm,
+						zczj,
+						khh,
+						khhzh,
+						zycp,
+						jyms,
+						ywy,
+						ywylxdh,
+						txdz,
+						cjsj,
+						qyzt,
+						desc
+ 		) values (
+ 			#{info.gysmc},
+			#{info.gysjc},
+			#{info.tyxydm},
+			#{info.jyfw},
+			#{info.fddbr},
+			#{info.sfzhm},
+			#{info.zczj},
+			#{info.khh},
+			#{info.khhzh},
+			#{info.zycp},
+			#{info.jyms},
+			#{info.ywy},
+			#{info.ywylxdh},
+			#{info.txdz},
+			#{info.cjsj},
+			#{info.qyzt},
+			#{info.desc}
+ 		)
+ 		
+ 	</insert>
+ 	
+    <update id="updatesupplier" parameterType="com.jskj.springboot.pojo.Supplier">
+      update supplier
+      <set>
+         <if test="info.gysmc !=null and info.gysmc != '' ">
+              gysmc = #{info.gysmc},
+         </if>
+         <if test="info.gysjc !=null and info.gysjc != '' ">
+             gysjc = #{info.gysjc},
+         </if>
+         <if test="info.tyxydm !=null and info.tyxydm != '' ">
+              tyxydm = #{info.tyxydm},
+         </if>
+         <if test="info.jyfw !=null and info.jyfw != '' ">
+              jyfw = #{info.jyfw},
+         </if>
+         <if test="info.fddbr !=null and info.fddbr != ''">
+              fddbr = #{info.fddbr},
+         </if>
+        <if test="info.sfzhm !=null and info.sfzhm != ''">
+              sfzhm = #{info.sfzhm},
+         </if>
+         <if test="info.zczj !=null and info.zczj != ''">
+              zczj = #{info.zczj},
+         </if>
+         <if test="info.khh !=null and info.khh != ''">
+              khh = #{info.khh},
+         </if>
+         <if test="info.khhzh !=null and info.khhzh != ''">
+              khhzh = #{info.khhzh},
+         </if>
+         <if test="info.zycp !=null and info.zycp != ''">
+              zycp = #{info.zycp},
+         </if>
+         <if test="info.jyms !=null and info.jyms != ''">
+              jyms = #{info.jyms},
+         </if>
+         <if test="info.ywy !=null and info.ywy != ''">
+              ywy = #{info.ywy},
+         </if>
+         <if test="info.ywylxdh !=null and info.ywylxdh != ''">
+              ywylxdh = #{info.ywylxdh},
+         </if>
+         <if test="info.txdz !=null and info.txdz != ''">
+              txdz = #{info.txdz},
+         </if>
+         <if test="info.gxsj !=null">
+              gxsj = #{info.gxsj},
+         </if>
+          <if test="info.descrip !=null and info.descrip != ''">
+              descrip = #{info.descrip}
+         </if>
+      </set>
+      where id = #{info.id}
+   </update>
+ 
+</mapper>

@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html lang="en-US">
+<head> 
+      <meta charset="UTF-8"/> 
+    <title>应用</title> 
+    <link rel="stylesheet" href="/static/js/element-ui-2.0/index.css" />	
+ 	<script type="text/javascript" src="/static/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/element-ui-2.0/vue.js"></script>
+	<script type="text/javascript" src="/static/js/element-ui-2.0/index.js"></script>
+    <script type="text/javascript" src="/static/js/md5.js"></script>
+     <script type="text/javascript" src="/static/js/Def2Val.js"></script>
+    <style type="text/css">
+		
+		#list{
+			height:450px;
+			width:100%;
+		}
+		#header {
+		    background-color:#8EC6DF;
+		    color:white;
+		    text-align:center;
+		    padding:20px;
+		    height:20%;
+		}
+		/* #nav {
+		    line-height:30px;
+		    background-color:#eeeeee;
+		    height:300px;
+		    width:100px;
+		    float:left;
+		    padding:5px; 
+		} */
+		#section {
+		    padding:330px; 
+		    text-align: center;
+		   /*   background-color: red; */
+		}
+		#footer {
+		    background-color: #8EC6DF;
+		    height:20%;
+		    color:white;
+		    clear:both;
+		    text-align:center;
+		    padding:40px; 
+		}
+		
+		.regist{
+			text-align: center
+		}
+    </style>
+</head> 
+
+<body> 
+<body> 
+	<div id="list" >
+		 <div id="header">
+    	<h1>应用</h1>
+		</div>
+		  	
+			    <template class='regist'>
+				 <el-form label-width="100px" size='medium' class="demo-ruleForm">
+					<el-form-item label="用户名" >
+					  <el-input v-model="username" style="width: 140px;"></el-input>
+					</el-form-item>
+					<el-form-item label="密码">
+					  <el-input v-model="password" style="width: 140px;" ></el-input>
+					</el-form-item>
+					<el-form-item label="联系电话">
+					  <el-input v-model="phone" style="width: 140px;"></el-input>
+					</el-form-item>
+					<el-form-item label="邮箱">
+					  <el-input v-model="email" style="width: 140px;"></el-input>
+					</el-form-item>
+					  <el-form-item>
+					    <el-button type="primary" @click="add">立即创建</el-button>
+					    <el-button @click="resetForm">重置</el-button>
+					  </el-form-item>
+					</el-form>
+				</template>
+				
+		
+				
+		<div id="footer">
+				 <img alt="" src="/static/images/jslogo.PNG" style="height:80px">
+		</div>
+       
+    </div>
+</body> 
+<script type="text/javascript" src="/static/js/Show.js"></script>
+</html>

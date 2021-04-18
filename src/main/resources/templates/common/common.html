@@ -1,0 +1,96 @@
+<#macro header>
+    <meta charset="UTF-8"/>
+    <title>应用</title>
+    <style type="text/css">a {text-decoration: none}</style>
+     <link rel="stylesheet" href="/static/js/element-ui-2.0/index.css" />	
+ 	<script type="text/javascript" src="/static/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/element-ui-2.0/vue.js"></script>
+	<script type="text/javascript" src="/static/js/element-ui-2.0/index.js"></script>
+     <script type="text/javascript" src="/static/js/Def2Val.js"></script>
+</#macro>
+
+
+<#macro head>
+		<el-row>
+		<el-menu :default-active="activeIndex" 
+		 class="el-menu-demo" mode="horizontal"
+		 @select="handleSelect"  
+  		 active-text-color="#ffd04b">
+				<el-col :span="2" ><img src="/static/images/log.png" alt="" height="30px"></el-col>
+				<el-col :span="1"></el-col>
+				<el-col :span="1"><el-menu-item index="1"><a href="/homePage" target="_self">首页</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="2"><a href="" target="_self">文章分类</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="3"><a href="" target="_self">标签</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="4"><a href="" target="_self">文章归档</a></el-menu-item></el-col>
+				<el-col :span="1"><el-menu-item index="5"><a href="/article/showArticle" target="_self">日志</a></el-menu-item></el-col>
+				<el-col :span="2"></el-col>
+				<el-col :span="4">
+					<el-menu-item index="1">
+						<a href="/article/addArticle" target="_self">
+							<i class="el-icon-edit"></i>写日志
+						</a>
+					</el-menu-item>
+				</el-col>
+				<el-col :span="1" id="el_col_dl">
+					<el-menu-item index="6">
+						<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+                                                                                        注册
+                        </el-button>
+					</el-menu-item>
+				</el-col>
+				<el-col :span="1" id="el_col_dl">
+					<el-menu-item index="7">登录</el-menu-item>
+				</el-col>
+				<el-col :span="1"></el-col>
+		   
+		</el-menu>
+	<el-row>
+	<el-drawer
+	  title="我是标题"
+	  :visible.sync="drawer"
+	  :with-header="false">
+	  <span>我来啦!</span>
+	</el-drawer>
+	<script>
+	 var vm = new Vue({
+		 data:{
+			 drawer: false 
+		 }
+		 
+	 });
+	</script>
+</#macro>
+
+<#macro top>
+   
+   	   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+			  <el-menu-item index="1"><a href="/gys/supplier">供应商管理</a></el-menu-item>
+			  <el-submenu index="2">
+			    <template slot="title">我的工作台</template>
+			    <el-menu-item index="2-1">选项1</el-menu-item>
+			    <el-menu-item index="2-2">选项2</el-menu-item>
+			    <el-menu-item index="2-3">选项3</el-menu-item>
+			    <el-menu-item index="2-4">选项4</el-menu-item>
+			  </el-submenu>
+			  <el-menu-item index="3" disabled>消息中心</el-menu-item>
+			  <el-menu-item index="4"><a href="">订单管理</a></el-menu-item>
+	   </el-menu>
+   
+</#macro>
+
+<#macro footer>
+   <footer id="page-footer">
+    <template>
+	  <div class="footer">
+		<div class="center">
+			<div class="link">
+				 <a
+					href="#">关于我们</a> <a href="#">帮助中心</a> <a href="#">意见反馈</a>
+			</div>
+			<div class="copy">Copyright 2007-2016 hetral.cn All rights
+				reserved 滇ICP证xxxx号 京ICP备xxxxx号 新出发零字第朝xxx号</div>
+		</div>
+	 </div>
+	</template>
+   </footer>
+</#macro>

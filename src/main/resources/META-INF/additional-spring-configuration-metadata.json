@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "spring.druid.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.password'"
+  },
+  {
+    "name": "spring.druid.maxActive",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.maxActive'"
+  },
+  {
+    "name": "spring.druid.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.username'"
+  },
+  {
+    "name": "spring.druid.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.url'"
+  },
+  {
+    "name": "spring.druid.minIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.minIdle'"
+  },
+  {
+    "name": "spring.druid.maxActive",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.maxActive'"
+  },
+  {
+    "name": "spring.druid.minIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.minIdle'"
+  },
+  {
+    "name": "spring.druid.maxActive",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.druid.maxActive'"
+  }
+]}

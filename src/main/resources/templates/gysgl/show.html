@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html lang="en-US">
+<head> 
+   <@common.header/>
+    <style type="text/css">
+		.el-header, .el-footer {
+		    color: #333;
+		    text-align: center;
+		    line-height: 100px;
+		  }
+		  .el-main {
+		    background-color: #E9EEF3;
+		    color: #333;
+		    text-align: center;
+		    line-height: 600px;
+		  }
+		  
+		  body > .el-container {
+		    margin-bottom: 40px;
+		  }
+    </style>
+</head> 
+
+<body> 
+	<div id="list" >
+		<el-container>
+		  <el-header>
+		  	<@common.top/>
+		  </el-header>
+		  <el-main>
+		  
+		  	<el-card class="box-card">
+			  <div slot="header" class="clearfix">
+			    <span>卡片名称</span>
+			    <el-input clearable  v-model="supplierName" placeholder="请输入供应商名称" style="width: 25%;"></el-input>
+			    <el-button type="primary" @click="search">搜索</el-button>
+				<el-button type="primary"  @click="add">新增</el-button>
+			  </div>
+			  <div class="text item">
+			    <template>
+				  <el-table :data="listjson" border style="width: 100%">
+				    <el-table-column prop="index" label="序号" width="90"> </el-table-column>
+				    <el-table-column prop="supplierName" label="供应商名称" width="180"> </el-table-column>
+				    <el-table-column prop="supplierAbbreviation" label="简称" width="180"> </el-table-column>
+				    <el-table-column prop="psr" label="业务员" width="180"> </el-table-column>
+				    <el-table-column prop="psrdh" label="配送人电话" width="180"> </el-table-column>
+				    <el-table-column prop="registeredCapital" label="注册资金" width="180"> </el-table-column>
+				  </el-table>
+				</template>
+			  </div>
+			</el-card>
+				
+
+          </el-main>
+		  <el-footer>
+		  </el-footer>
+		</el-container>
+    </div>
+</body> 
+<script type="text/javascript" src="/static/js/gysglshow.js"></script>
+</html>

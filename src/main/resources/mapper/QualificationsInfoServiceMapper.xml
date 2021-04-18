@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jskj.springboot.mapper.ZzglMapper">
+ 
+  	<select id="getListjson" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and validity_end_date  &lt;  #{strNow}
+         	</if>
+		
+		</where>
+  	</select>
+  	<select id="getListjsonzc" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and validity_end_date &gt;  #{strNow}
+         	</if>
+		
+		</where>
+  	</select>
+ 	<select id="getListjsonGyszc" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and t.validity_end_date &gt;  #{strNow}
+         	</if>
+		and t.business_type_code ='001'
+		</where>
+  	</select>
+  	
+  	<select id="getListjsonGysgq" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and t.validity_end_date &lt;=   #{strNow}
+         	</if>
+		and t.business_type_code ='001'
+		</where>
+  	</select>
+  	
+  	<select id="getListjsonCszc" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and t.validity_end_date &gt;   #{strNow}
+         	</if>
+		and t.business_type_code ='002'
+		</where>
+  	</select>
+  	
+  	<select id="getListjsonCsgq" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and t.validity_end_date &lt;=   #{strNow}
+         	</if>
+		and t.business_type_code ='002'
+		</where>
+  	</select>
+  	<select id="getListjsonCpzc" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and t.validity_end_date &gt;  #{strNow}
+         	</if>
+		and t.business_type_code ='003'
+		</where>
+  	</select>
+  	
+  	<select id="getListjsonCpgq" resultType="int">
+		select count(*) from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and t.validity_end_date &lt;=   #{strNow}
+         	</if>
+		and t.business_type_code ='003'
+		</where>
+  	</select>
+  	
+  	<select id="getListjsongqzz" resultType="com.jskj.springboot.pojo.QualificationsInfo">
+		select t.* from qualifications_info t 
+		<where>
+			<if test="strNow != null   and strNow != ''">
+             and t.validity_end_date &lt;=   #{strNow}
+         	</if>
+         	<if test="businessTypeCode != null   and businessTypeCode != ''">
+             and t.business_type_code = #{businessTypeCode}
+         	</if>
+			and t.enable_code ='1'
+		</where>
+  	</select>
+  	
+</mapper>
